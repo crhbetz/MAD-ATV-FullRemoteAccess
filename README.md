@@ -6,7 +6,7 @@ This has only been tested on ATV boxes running the 64bit MAD ROM, because I don'
 
 ## Security warning
 
-Please do not follow these instructions if you're unsure about possible security implications, especially since we'll be transferring an unprotected private key to remote ATV boxes enabling anyone with access to these boxes to obtain the private key and connect to the SSH service on your server/machine. I'm an amateur in all these things and while I did my best to Google the appropriate security measures, I cannot guarantee the security of these instructions.
+Please do not follow these instructions if you're unsure about possible security implications, especially since we'll be transferring an unprotected private key to remote ATV boxes enabling anyone with access to these boxes to obtain the private key and connect to the SSH service on your server/machine. I'm an amateur in all these things and while I did my best to Google the appropriate security measures and the user *should* not be able to do any harm to your server as far as I am aware, I cannot guarantee the security of these instructions. **Proceed at your own risk!**
 
 ## Requirements
 
