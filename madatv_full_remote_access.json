@@ -1,0 +1,16 @@
+{
+            "ATV - Start remote ADB":
+        [
+                {
+                        "TYPE": "jobType.PASSTHROUGH",
+                        "SYNTAX": "curl -s -k -L https://raw.githubusercontent.com/crhbetz/MAD-ATV-FullRemoteAccess/main/dropbearmulti -o /data/local/tmp/dropbearmulti; curl -s -k -L <--user basicauthuser:basicauthpw> <http://location of your private key> -o /data/local/tmp/dropbearkey; chmod 600 /data/local/tmp/dropbearkey; chmod +x /data/local/tmp/dropbearmulti; ln -s /data/local/tmp/dropbearmulti /data/local/tmp/ssh; /data/local/tmp/ssh -f -N -T -R <port>:localhost:5555 remotemaduser@<your server> -i /data/local/tmp/dropbearkey -y"
+                }
+        ],
+            "ATV - Stop remote ADB":
+        [
+               {
+                       "TYPE": "jobType.PASSTHROUGH",
+                       "SYNTAX": "pkill ssh"
+               }
+        ]
+}
