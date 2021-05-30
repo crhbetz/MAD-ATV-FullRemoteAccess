@@ -80,6 +80,19 @@ Instead of connecting directly on your server, you could now proceed to further 
 
 After you're done, terminate the connection with the `ATV - Stop remote ADB` job. Only one device can be connected like this at a time.
 
+## Bonus: Connecting to a third box
+
+* You need to connect to a remote box, but it won't connect to MAD, so you can't run the `Start remote ADB` job on it?
+* You have a second, fully working box right next to it?
+
+Then you could do this:
+
+* obtain the problematic boxes' local IP: ask your box host to check their router, or even better, have my [mp-activityFile](https://github.com/crhbetz/mp-activityFile) plugin running with its functionality to store local and public IP to a `.ips` file :-)
+* edit the `madatv_full_remote_access.json` file (or create a copy), replacing `localhost:5555` with `localboxip:5555`
+* reload jobs and run the new job on a working box at the same location
+
+Now, your working box will create a tunnel from the problematic boxes' ADB service to your server, enabling you to connect to ADB on the problematic box!
+
 # Disclaimers
 
 ## Dropbear binary
