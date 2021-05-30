@@ -2,6 +2,8 @@
 
 The information in this repository will enable you to gain full ADB (and thus tools based on it, especially `scrcpy`) access to MAD-ATV boxes in remote locations utilizing only a MAD job. We will use `dropbear`, a SSH replacement tailored for weaker devices, on the ATV box to connect to your server via SSH and create a tunnel from a local port on your server to the ADB service on the ATV box. Thus, you will be able to connect to the ADB service on your server using `adb connect localhost:<port>`.
 
+This has only been tested on ATV boxes running the 64bit MAD ROM, because I don't own any other scanning devices. Judging by the naming of the archive I got the `dropbearmulti` binary from, it **could possibly** also run on 32bit devices.
+
 ## Security warning
 
 Please do not follow these instructions if you're unsure about possible security implications, especially since we'll be transferring an unprotected private key to remote ATV boxes enabling anyone with access to these boxes to obtain the private key and connect to the SSH service on your server/machine. I'm an amateur in all these things and while I did my best to Google the appropriate security measures, I cannot guarantee the security of these instructions.
@@ -77,3 +79,9 @@ Now on your server, you should have full ADB access to this device, connecting w
 Instead of connecting directly on your server, you could now proceed to further ssh-forward this port on your server to your local machine to adb connect and run scrcpy locally. Please Google a tutorial for this if you're unsure how to accomplish this on the OS of your choice.
 
 After you're done, terminate the connection with the `ATV - Stop remote ADB` job. Only one device can be connected like this at a time.
+
+# Disclaimers
+
+## Dropbear binary
+
+The `dropbearmulti` binary that's uploaded into this repository and used for the provided MAD job was obtained from `https://bitfab.org/dropbear-static-builds/`, direct link: `https://bitfab.org/dropbear-static-builds/dropbear-v2020.81-arm-none-linux-gnueabi-static.tgz`.
