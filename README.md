@@ -26,7 +26,7 @@ In order to create a dropbear compatible keypair, we need the `dropbearkey` prog
 Create a new local user on your server with `sudo useradd -m remotemaduser --shell /bin/false`. Defining the shell as `/bin/false` is one part of ensuring this user won't be able to do anything other than creating our tunnel when connecting through SSH.
 
 * verify the user's home directory exists by checking `ls -la /home`
-* verify the passwd entry has the correct info: `cat /etc/passwd | grep mad` should return this (user ID 1002 can of course differ): `remotemaduser:x:1002:1002::/home/remotemaduser:/bin/false`
+* verify the passwd entry has the correct info: `grep mad /etc/passwd` should return this (user ID 1002 can of course differ): `remotemaduser:x:1002:1002::/home/remotemaduser:/bin/false`
 
 ## Create dropbear keypair in the new user's .ssh directory
 
