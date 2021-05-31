@@ -65,6 +65,8 @@ Now if the previous command exited automatically without any output, try: `dbcli
 
 In another shell, try `sudo netstat -tulpn | grep 1234` and confirm you have at least one entry like  ```tcp        0      0 127.0.0.1:12346         0.0.0.0:*               LISTEN      615647/sshd: remotemaduser```
 
+If you found this entry in `netstat`, you can exit the silent `dbclient` in the first shell by pressing `CTRL+C`.
+
 ## Install and run the job
 
 We should be all set now server-side! Now download the `madatv_full_remote_access.json` file form this repo, move it to your `MAD/personal_commands` folder and edit the parts marked with `<>` to match your setup, removing these `<>` in the process.
